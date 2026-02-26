@@ -1,103 +1,192 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Kinsta User</title>
-        <!-- CSS: Inside head tag -->
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
-            integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-        <!-- Devicon: Programming languages icons -->
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dante Brewer | Engineering & Athletics</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&family=JetBrains+Mono&display=swap" rel="stylesheet">
 
-    <body>
-        <nav class="navbar navbar-dark navbar-expand-lg bg-dark ">
-            <div class="container-fluid">
-                <div class="mx-4">
-                    <a class="navbar-brand" href="#">Kinsta User</a>
-                </div>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false"
-                    aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Projects</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Reading Log</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
+    <style>
+        :root {
+            --bg-dark: #0f172a;
+            --accent-blue: #38bdf8;
+            --text-gray: #94a3b8;
+        }
 
-        <div class="container my-4 ">
-            <div class="row justify-content-center">
-                <div class="col-lg mb-lg-4">
-                    <img src="image.jpg" class="img-fluid" alt="" srcset="">
-                </div>
-                <div class="col-lg mx-2 align-self-center">
-                    <div class="my-3">
-                        <h1 class="text-center">I'm a Kinsta User</h1>
-                        <p>As a passionate software developer, I am deeply enthusiastic about creating and
-                            developing software applications. I am constantly learning and experimenting with new
-                            technologies and approaches, and I have a strong desire to create innovative and effective
-                            solutions to complex problems. I am driven by curiosity and love for problem-solving, and
-                            I
-                            am committed to producing high-quality, well-designed software that meets the needs of
-                            users.
-                        </p>
-                    </div>
-                </div>
+        body {
+            background-color: var(--bg-dark);
+            color: #f8fafc;
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            background: radial-gradient(circle at 10% 20%, rgba(56, 189, 248, 0.05) 0%, transparent 50%);
+        }
+
+        .profile-card {
+            background: rgba(30, 41, 59, 0.5);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 24px;
+            padding: 2rem;
+            transition: transform 0.3s ease;
+        }
+
+        .profile-img {
+            border-radius: 20px;
+            border: 2px solid var(--accent-blue);
+            box-shadow: 0 0 20px rgba(56, 189, 248, 0.2);
+            /* Added object-fit to handle the aspect ratio of the new photo nicely */
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+        }
+
+        /* Typography */
+        h1 { font-weight: 800; letter-spacing: -1px; }
+        .mono { font-family: 'JetBrains Mono', monospace; color: var(--accent-blue); }
+
+        /* --- 24/7 Color Changing Animation --- */
+        @keyframes colorChange {
+            0% { color: #38bdf8; }   /* Sky Blue */
+            25% { color: #f472b6; }  /* Pink */
+            50% { color: #fb923c; }  /* Orange */
+            75% { color: #4ade80; }  /* Green */
+            100% { color: #38bdf8; } /* Back to Blue */
+        }
+
+        .wrestling-president {
+            font-weight: 700;
+            animation: colorChange 8s infinite; /* Cycles colors every 8 seconds forever */
+        }
+        /* ------------------------------------ */
+
+        /* Skill Cards */
+        .skill-box {
+            background: #1e293b;
+            border-radius: 16px;
+            padding: 1.5rem;
+            text-align: center;
+            border: 1px solid transparent;
+            transition: all 0.3s ease;
+        }
+
+        .skill-box:hover {
+            border-color: var(--accent-blue);
+            transform: translateY(-5px);
+            background: #233044;
+        }
+
+        .skill-box i {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        /* Custom Button */
+        .btn-primary-custom {
+            background-color: var(--accent-blue);
+            color: var(--bg-dark);
+            font-weight: 700;
+            padding: 12px 30px;
+            border-radius: 12px;
+            border: none;
+            transition: 0.3s;
+        }
+
+        .btn-primary-custom:hover {
+            background-color: #7dd3fc;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark pt-4">
+        <div class="container">
+            <a class="navbar-brand fw-bold mono" href="#">DB.ENGINEER</a>
+            <div class="ms-auto">
+                <a href="#projects" class="text-decoration-none text-white me-4">Projects</a>
+                <a href="#contact" class="btn btn-outline-info btn-sm">Contact Me</a>
             </div>
-            <div class="my-4">
-                <div class="text-center mb-4">
-                    <h1>My Skills</h1>
+        </div>
+    </nav>
+
+    <section class="hero-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <p class="mono mb-2">/ Undergraduate Portfolio</p>
+                    <h1 class="display-3 mb-3">Dante Brewer</h1>
+                    <h4 class="text-info mb-4">Electrical & Computer Engineering</h4>
+                    <p class="lead text-gray mb-4">
+                        I am a sophomore engineering student (Class of 2028). 
+                        Between circuit analysis and embedded systems, I lead as the 
+                        <span class="wrestling-president">President of the Wrestling Club</span> on campus. 
+                        I thrive on the technical rigor of engineering and the competitive discipline of the mat.
+                    </p>
+                    <div class="d-flex gap-3">
+                        <button class="btn btn-primary-custom">View My Work</button>
+                        <button class="btn btn-outline-light px-4" style="border-radius: 12px;">Resume</button>
+                    </div>
                 </div>
-                <div class="row ">
-                    <style>
-                        i {
-                            font-size: 4em;
-                        }
-                    </style>
-                    <!-- Skills -->
-                    <div class="col">
-                        <div class="text-center">
-                            <h4>WordPress</h4>
-                            <i class="devicon-wordpress-plain"></i>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="text-center">
-                            <h4>Django</h4>
-                            <i class="devicon-django-plain"></i>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="text-center">
-                            <h4>Python</h4>
-                            <i class="devicon-python-plain"></i>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="text-center">
-                            <h4>GitHub</h4>
-                            <i class="devicon-github-original"></i>
-                        </div>
+                <div class="col-lg-5 offset-lg-1 d-none d-lg-block">
+                    <div class="profile-card">
+                        <img src="image_0.png" class="img-fluid profile-img" alt="Dante Brewer holding controllers on couch">
                     </div>
                 </div>
             </div>
         </div>
-        <!-- JavaScript: Above <body>  -->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
-            crossorigin="anonymous"></script>
-    </body>
+    </section>
 
+    <section class="py-5" id="skills">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-12">
+                    <h2 class="fw-bold">Skills & Leadership</h2>
+                    <div style="width: 60px; height: 4px; background: var(--accent-blue);"></div>
+                </div>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="skill-box">
+                        <i class="devicon-python-plain colored"></i>
+                        <h5>Python Development</h5>
+                        <p class="small text-gray">Scripting, Automation, and Data Analysis.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="skill-box">
+                        <i class="devicon-github-original text-white"></i>
+                        <h5>Version Control</h5>
+                        <p class="small text-gray">Collaborative engineering & documentation.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="skill-box">
+                        <i class="bi bi-trophy-fill wrestling-president"></i>
+                        <h5>Club Presidency</h5>
+                        <p class="small text-gray">Leading the Wrestling Club on campus.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-5 text-center border-top border-secondary mt-5">
+        <p class="text-gray mb-0">© 2024 Dante Brewer. Built for the future.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
 </html>
